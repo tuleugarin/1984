@@ -1,3 +1,20 @@
+<?php
+$posts = [
+	[
+		"id" => 1,
+		"title" => "Lorem ipsum, dolor 1."
+	],
+	[
+		"id" => 2,
+		"title" => "Lorem ipsum, dolor 2."
+	],
+	[
+		"id" => 3,
+		"title" => "Lorem ipsum, dolor 3."
+	]
+]
+ ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,14 +50,16 @@
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
+  	<?php foreach ($posts as $post): ?>
+	<tr>
+      <th scope="row"><?=$post['id'];?></th>
+      <td><?=$post['title'];?></td>
       <td>
       	<a href="#" class="btn btn-warning">Edit</a>
       	<a href="#" class="btn btn-danger">Delete</a>
       </td>
     </tr>
+  	<?php endforeach; ?>
   </tbody>
 </table>
 		</div>
