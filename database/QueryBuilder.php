@@ -7,10 +7,10 @@ class QueryBuilder{
 		$this->pdo = $pdo;
 	}
 
-	function getAll(){
+	function getAll($table){
 
 		// 2.Выпол запрос
-		$sql = "SELECT * FROM posts";
+		$sql = "SELECT * FROM {$table}";
 		$statment = $this->pdo->prepare($sql);  //prepare-выбрать
 		$statment->execute();//execute-выполнит
 
