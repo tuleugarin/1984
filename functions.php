@@ -5,21 +5,6 @@ function dd($data){
 	echo '</pre>';
 	die;
 }
-function connectToDB (){
-			// 1.Соедю с БД
-	$pdo = new PDO("mysql:host=localhost;dbname=app3;charset=utf8;", "root", "");
-	return $pdo;
-}
-function getAllPosts($pdo){
 
 
-	// 2.Выпол запрос
-	$sql = "SELECT * FROM posts";
-	$statment = $pdo->prepare($sql);  //prepare-выбрать
-	$statment->execute();//execute-выполнит
-
-	// 3.Получит ассоциативный массив ->$posts
-	$posts = $statment->fetchALL(PDO::FETCH_ASSOC);//fetch-получить(ASSOC-ассоциативный)
-	return $posts;
-}
  ?>
