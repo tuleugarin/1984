@@ -1,5 +1,5 @@
 <?php
-$posts = [
+/*$posts = [
 	[
 		"id" => 1,
 		"title" => "Lorem ipsum, dolor 1."
@@ -12,10 +12,18 @@ $posts = [
 		"id" => 3,
 		"title" => "Lorem ipsum, dolor 3."
 	]
-]
+]*/
+
 // 1.Соедю с БД
+$pdo = new PDO("mysql:host=localhost;dbname=app3;charset=utf8;", "root", "");
+
 // 2.Выпол запрос
+$sql = "SELECT * FROM posts";
+$statment = $pdo->prepare($sql);  //prepare-выбрать
+$statment->execute();//execute-выполнит
+
 // 3.Получит ассоциативный массив ->$posts
+$posts = $statment->fetchALL(PDO::FETCH_ASSOC);//fetch-получить(ASSOC-ассоциативный)
 // 4.Вывести через foreach;
  ?>
 
