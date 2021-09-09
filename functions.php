@@ -5,10 +5,13 @@ function dd($data){
 	echo '</pre>';
 	die;
 }
-
-function getAllPosts(){
-		// 1.Соедю с БД
+function connectToDB (){
+			// 1.Соедю с БД
 	$pdo = new PDO("mysql:host=localhost;dbname=app3;charset=utf8;", "root", "");
+	return $pdo;
+}
+function getAllPosts($pdo){
+
 
 	// 2.Выпол запрос
 	$sql = "SELECT * FROM posts";

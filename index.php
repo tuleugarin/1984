@@ -1,7 +1,8 @@
 <?php
 include 'functions.php';
 
-$posts = getAllPosts();
+$pdo =connectToDB();
+$posts = getAllPosts($pdo);
 
 // 4.Вывести через foreach;
 include 'index.view.php';
