@@ -24,6 +24,7 @@
 	<div class="row">
 		<div class="col-md-8 offset-md-2">
 			<table class="table">
+				<a href="#" class="btn btn-success">Add post</a>
   <thead>
     <tr>
       <th scope="col">Id</th>
@@ -36,8 +37,8 @@
       <th scope="row">1</th>
       <td>Mark</td>
       <td>
-      	<a href="">Edit</a>
-      	<a href="">Delete</a>
+      	<a href="#" class="btn btn-warning">Edit</a>
+      	<a href="#" class="btn btn-danger">Delete</a>
       </td>
     </tr>
   </tbody>
