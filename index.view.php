@@ -24,7 +24,7 @@
 	<div class="row">
 		<div class="col-md-8 offset-md-2">
 			<table class="table">
-				<a href="#" class="btn btn-success">Add post</a>
+				<a href="create.php" class="btn btn-success">Add post</a>
   <thead>
     <tr>
       <th scope="col">Id</th>
