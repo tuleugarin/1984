@@ -19,9 +19,9 @@ class QueryBuilder{
 
 	}
 
-	public function create()
+	public function create($table, $key, $value)
 	{
-		$sql = "INSERT INTO posts (title) VALUES ('Shalom')";
+		$sql = "INSERT INTO {$table} ({$key}) VALUES ('{$value}')";
 		$statment = $this->pdo->query($sql);
 		dd($statment);
 
