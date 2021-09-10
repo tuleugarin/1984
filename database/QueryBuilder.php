@@ -19,10 +19,12 @@ class QueryBuilder{
 
 	}
 
-	public function create($table, $key, $value)
+	public function create($table, $data)
 	{
-		$sql = "INSERT INTO {$table} ({$key}) VALUES ('{$value}')";
-		$statment = $this->pdo->query($sql);
+		$sql = "INSERT INTO {$table} (title) VALUES (:title)";
+		$statment = $this->pdo->prepare($sql);
+		$statment -> bindValue(':title', "AriGaTo");
+		$statment -> execute();
 		dd($statment);
 
 	}
