@@ -23,8 +23,10 @@ class QueryBuilder{
 		// 2.Выпол запрос
 		$sql = "SELECT * FROM {$table} WHERE id=:id";
 		$statment = $this->pdo->prepare($sql);  //prepare-выбрать
-		$statment -> bindParam(':id', $id);//bindValue()-Связывает параметр с заданным значением только переменную
-		$statment -> execute();//execute-выполнит
+		//$statment -> bindParam(':id', $id);//bindValue()-Связывает параметр с заданным значением только переменную
+		$statment -> execute([
+			'id' => $id
+		]);//execute-выполнит
 
 		// 3.Получит ассоциативный массив ->$posts
 		$result = $statment -> fetch(PDO::FETCH_ASSOC);

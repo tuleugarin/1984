@@ -36,7 +36,7 @@
   	<?php foreach ($posts as $post): ?>
 	<tr>
       <th scope="row"><?=$post['id'];?></th>
-      <td><?=$post['title'];?></td>
+      <td><a href="/show.php?id=<?=$post['id'];?>"><?=$post['title'];?></a></td>
       <td>
       	<a href="#" class="btn btn-warning">Edit</a>
       	<a href="#" class="btn btn-danger">Delete</a>
