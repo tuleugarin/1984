@@ -47,13 +47,16 @@ class QueryBuilder{
 	{
 		//$sql = "UPDATE FROM {$table} 'title=:title, email=:email' WHERE id=:id" - делаем вот так
 		$keys = array_keys($data);
-		$string = " ";
+		$string = "";
 		foreach ($keys as $key)
 		{
 			$string .= $key . "=:" . $key . ",";
 		}
 
-		dd(rtrim($string, ","));
+		$keys = rtrim($string, ",");
+
+		$sql = "UPDATE FROM {$table} '{$keys}' WHERE id=:id";
+		dd($sql);
 	}
 }
  ?>

@@ -5,8 +5,8 @@ $db = include 'database/start.php';
 
 $db->update('posts', [
 
-	'title' => "lilo",
-	'email' => 'hgsh',
+	'title' => $_POST['title']
+
 ], $_GET['id']);
 
 ?>
