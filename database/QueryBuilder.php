@@ -45,18 +45,32 @@ class QueryBuilder{
 
 	public function update($table, $data, $id)
 	{
-		//$sql = "UPDATE FROM {$table} 'title=:title, email=:email' WHERE id=:id" - делаем вот так
+		//$sql = "UPDATE {$table} SET 'title=:title, email=:email' WHERE id=:id" - делаем вот так
 		$keys = array_keys($data);
 		$string = "";
 		foreach ($keys as $key)
 		{
-			$string .= $key . "=:" . $key . ",";
+			$string .= $key . "=:" . $key . ","; // здесь получаем строку -title=:title, email=:email
 		}
 
-		$keys = rtrim($string, ",");
+		$keys = rtrim($string, ","); //rtrim() - удаляет последний символ
+		$data['id'] = $id;
 
-		$sql = "UPDATE FROM {$table} '{$keys}' WHERE id=:id";
-		dd($sql);
+		$sql = "UPDATE {$table} SET {$keys} WHERE id=:id";
+		$statment = $this->pdo->prepare($sql);
+		return $statment->execute($data);
+	}
+
+	public function delete($table, $id)
+	{
+		// 2.Выпол запрос
+		$sql = "DELETE FROM {$table} WHERE id=:id";
+		$statment = $this->pdo->prepare($sql);
+		$statment -> execute([
+			'id' => $id
+		]);
+
+		return;
 	}
 }
  ?>
