@@ -43,11 +43,17 @@ class QueryBuilder{
 		$statment -> execute($data); //Передаем сюда массив он сам получит значение для каждого из ключей
 	}
 
-	public function update($table, $data)
+	public function update($table, $data, $id)
 	{
-		//$sql = "UPDATE FROM {$table} 'title=:title, email=:email' WHERE id=:id"
+		//$sql = "UPDATE FROM {$table} 'title=:title, email=:email' WHERE id=:id" - делаем вот так
 		$keys = array_keys($data);
-		dd($keys);
+		$string = " ";
+		foreach ($keys as $key)
+		{
+			$string .= $key . "=:" . $key . ",";
+		}
+
+		dd(rtrim($string, ","));
 	}
 }
  ?>

@@ -20,10 +20,9 @@ $post = $db->getOne('posts', $id);
 	<div class="container">
 		<div class="row">
 			<div class="col-md-8 offset-md-2">
-				<form action="/update.php" method="POST">
+				<form action="/update.php?id=<?php echo $post['id']; ?>" method="POST">
 					<div class="form-group">
 						<lable>Title</lable>
-						<input type="hidden" name="id" value="<?php echo $post['id']; ?>">
 						<input type="text" name="title" class="form-control" value="<?php echo $post['title'];  ?>">
 					</div>
 					<div class="form-control">
