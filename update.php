@@ -4,7 +4,7 @@ include 'functions.php';
 $db = include 'database/start.php';
 
 
-dd($_POST);
-//$db->create('posts', [	'title' => $_POST['title'],]);
 
-// ?>
+$db->update('posts', $_POST);
+
+?>
