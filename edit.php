@@ -23,6 +23,7 @@ $post = $db->getOne('posts', $id);
 				<form action="/update.php" method="POST">
 					<div class="form-group">
 						<lable>Title</lable>
+						<input type="hidden" name="id" value="<?php echo $post['id']; ?>">
 						<input type="text" name="title" class="form-control" value="<?php echo $post['title'];  ?>">
 					</div>
 					<div class="form-control">
