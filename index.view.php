@@ -38,8 +38,8 @@
       <th scope="row"><?=$post['id'];?></th>
       <td><a href="/show.php?id=<?=$post['id'];?>"><?=$post['title'];?></a></td>
       <td>
-      	<a href="#" class="btn btn-warning">Edit</a>
-      	<a href="#" class="btn btn-danger">Delete</a>
+      	<a href="/edit.php?id=<?=$post['id'];?>" class="btn btn-warning">Edit</a>
+      	<a href="/delete.php?id=<?=$post['id'];?>" class="btn btn-danger">Delete</a>
       </td>
     </tr>
   	<?php endforeach; ?>

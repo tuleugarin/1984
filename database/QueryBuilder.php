@@ -29,8 +29,7 @@ class QueryBuilder{
 		]);//execute-выполнит
 
 		// 3.Получит ассоциативный массив ->$posts
-		$result = $statment -> fetch(PDO::FETCH_ASSOC);
-		return $result;
+		return $statment -> fetch(PDO::FETCH_ASSOC);
 	}
 
 	public function create($table, $data)
