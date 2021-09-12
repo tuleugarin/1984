@@ -2,13 +2,13 @@
 include 'functions.php';
 // 1. Настроит сервер, чтобы все запросы шли автоматический на страницу/файл index.php
 $routes = [
-	'/' =>  'public/index.php',
+	'/' =>  'public/homepage.php',
 	'/about' => 'public/about.php'
 ];
 $route = $_SERVER['REQUEST_URI'];
 
-if (array_key_exists($route, $routes)){
-	dd($routes[$route]);
+if (array_key_exists($route, $routes)){ // array_key_exists()-есть ли значение в этом массиве
+	include $routes[$route]; exit;
 }
 else{
 	dd(404);
