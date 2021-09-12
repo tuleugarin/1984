@@ -1,5 +1,5 @@
 <?php
-include 'functions.php';
+include __DIR__ . '/../functions.php';
 // 1. Настроит сервер, чтобы все запросы шли автоматический на страницу/файл index.php
 $routes = [
 	'/' =>  'public/homepage.php',
@@ -24,3 +24,10 @@ $posts = $db->getAll('posts');
 // 4.Вывести через foreach;
 include 'index.view.php';
  ?>
+
+ BROWSER -> homepage.php -> index.php //Единый точка входа Front Controller
+ 							-> Router
+ 								-> /homepage => '/controllers/homepage.php'
+ 																-> QueryBuilder -> All()
+ 																-> return include VIEW
+ 																->Result
