@@ -6,5 +6,3 @@ function dd($data){
 	die;
 }
 
-
- ?>

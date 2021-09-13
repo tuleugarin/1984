@@ -15,7 +15,10 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
-        <a class="nav-link" href="index.php">Main Page</a>
+        <a class="nav-link" href="/">Home Page</a>
+      </div>
+      <div class="navbar-nav">
+        <a class="nav-link" href="/about">About</a>
       </div>
     </div>
   </div>
@@ -36,10 +39,10 @@
   	<?php foreach ($posts as $post): ?>
 	<tr>
       <th scope="row"><?=$post['id'];?></th>
-      <td><a href="/show.php?id=<?=$post['id'];?>"><?=$post['title'];?></a></td>
+      <td><a href="/show.php?id=<?php echo $post['id']; ?>"><?=$post['title'];?></a></td>
       <td>
-      	<a href="/edit.php?id=<?=$post['id'];?>" class="btn btn-warning">Edit</a>
-      	<a href="/delete.php?id=<?=$post['id'];?>" class="btn btn-danger" onclick="return confirm('are you sure?');"  >Delete</a>
+      	<a href="/edit.php?id=<?php echo $post['id']; ?>" class="btn btn-warning">Edit</a>
+      	<a href="/delete.php?id=<?php echo $post['id'];?>" class="btn btn-danger" onclick="return confirm('are you sure?');"  >Delete</a>
       </td>
     </tr>
   	<?php endforeach; ?>

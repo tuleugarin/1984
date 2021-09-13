@@ -1,6 +1,6 @@
 <?php
-include 'functions.php';
-$db = include 'database/start.php';
+include __DIR__ . '../functions.php';
+$db = include __DIR__ . '../database/start.php';
 
 $id = $_GET['id'];
 
